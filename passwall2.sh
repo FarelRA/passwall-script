@@ -19,7 +19,7 @@ opkg-key add passwall.pub
 
 # Create customfeeds.conf
 . /etc/openwrt_release
-release=$(echo "$DISTRIB_RELEASE" | sed 's/\..*//')
+release=$(echo "$DISTRIB_RELEASE" | sed 's/\.[^.]*$//')
 arch="$DISTRIB_ARCH"
 
 cat << EOF > /etc/opkg/customfeeds.conf
