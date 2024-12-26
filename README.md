@@ -26,7 +26,7 @@ This repository contains the following scripts:
 Download the specific scripts you need or just run the installer in your OpenWrt router:
 
 ```bash
-wget https://raw.githubusercontent.com/FarelRA/passwall-script/install.sh && chmod +x install.sh && sh install.sh
+wget https://raw.githubusercontent.com/FarelRA/passwall-script/main/install.sh && chmod +x install.sh && sh install.sh
 ```
 
 ### `installer.sh` Options
