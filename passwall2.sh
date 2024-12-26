@@ -31,7 +31,7 @@ EOF
 # --- Install Packages ---
 opkg update
 opkg remove dnsmasq
-opkg install dnsmasq-full luci-app-passwall2 kmod-nft-socket kmod-nft-tproxy ca-bundle kmod-inet-diag kernel kmod-netlink-diag kmod-tun
+opkg install dnsmasq-full luci-app-passwall2 kmod-nft-socket kmod-nft-tproxy ca-bundle kmod-inet-diag kernel kmod-netlink-diag kmod-tun iptables ipset
 
 # --- Verify Passwall Installation ---
 if [ -e /etc/init.d/passwall2 ]; then
@@ -49,9 +49,6 @@ else
   echo -e "${RED}Package dnsmasq-full not installed! (Bad internet connection.)${NC}"
   exit 1
 fi
-
-# --- Copy overide to root ---
-cp overide/* /
 
 # --- Install Xray ---
 opkg install xray-core

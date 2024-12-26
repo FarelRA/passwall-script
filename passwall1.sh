@@ -50,9 +50,6 @@ else
   exit 1
 fi
 
-# --- Copy overide to root ---
-cp overide/* /
-
 # --- Install Xray ---
 opkg install xray-core
 
