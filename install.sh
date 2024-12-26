@@ -17,6 +17,8 @@ NC='\033[0m'  # No Color
 # --- Check for Snapshot Version ---
 if grep -q "SNAPSHOT" /etc/openwrt_release; then
   SNAPSHOT="true"
+else
+  SNAPSHOT="false"
 fi
 
 # --- Welcome Message ---
@@ -55,7 +57,7 @@ read -p " - Select Passwall Option : " choice
 case "$choice" in
   1)
     echo "Installing Passwall 1 ..."
-    if [[ $SNAPSHOT = "true" ]];then
+    if [[ "$SNAPSHOT" = "true" ]]; then
       rm -f passwall-snapshots.sh
       wget https://raw.githubusercontent.com/FarelRA/passwall-script/main/passwall-snapshots.sh
       chmod +x passwall-snapshots.sh
@@ -70,7 +72,7 @@ case "$choice" in
 
   2)
     echo "Installing Passwall 2 ..."
-    if [[ $SNAPSHOT = "true" ]];then
+    if [[ "$SNAPSHOT" = "true" ]]; then
       rm -f passwall-snapshots.sh
       wget https://raw.githubusercontent.com/FarelRA/passwall-script/main/passwall-snapshots.sh
       chmod +x passwall-snapshots.sh
